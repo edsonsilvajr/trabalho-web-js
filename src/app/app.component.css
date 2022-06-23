@@ -35,3 +35,9 @@
 .links-list li {
   margin-right: 12px;
 }
+
+@media(max-width: 768px) {
+  .links-list {
+      flex-direction: column;
+  }
+}

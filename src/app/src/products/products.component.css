@@ -7,6 +7,12 @@
   margin-bottom: 24px;
 }
 
+@media(max-width: 768px) {
+  .products {
+    grid-template-columns: 1fr;
+  }
+}
+
 .filter-container{
   display: flex;
   margin: 24px;
