@@ -8,6 +8,8 @@ Clone esse repositório com `git-clone` e rode `npm-install` no diretório do pr
 
 ## Link para site em deploy
 
-[Link para site](https://mf-sports.netlify.app)
+- [Link para site](https://mf-sports.netlify.app)
 
-https://mf-sports.netlify.app
+- https://mf-sports.netlify.app
+
+- link no github: https://github.com/edsonsilvajr/trabalho-web-js
