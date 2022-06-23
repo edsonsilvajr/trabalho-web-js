@@ -31,6 +31,12 @@
   border-radius: 12px;
 }
 
+@media(max-width: 1000px) {
+  .form-container {
+    width: 100%;
+  }
+}
+
 form{
   width: 50%;
 }
