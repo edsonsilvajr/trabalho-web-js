@@ -1,0 +1,12 @@
+<div class="modal-content">
+  <img [src]="product.url" [alt]="product.name" />
+  <div class="background">
+    <p class="product-title">{{ product.name }}</p>
+    <p class="product-price">R$ {{ product.price }},00</p>
+
+    <div class="product-description">
+      <h3>Descrição Adicional</h3>
+      <p>{{ product.description }}</p>
+    </div>
+  </div>
+</div>

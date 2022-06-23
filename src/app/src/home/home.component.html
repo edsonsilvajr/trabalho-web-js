@@ -1,0 +1,52 @@
+<ngb-carousel *ngIf="images">
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img
+        [src]="images[0]"
+        alt="Random first slide"
+        width="100%"
+        height="600"
+      />
+    </div>
+    <div class="carousel-caption">
+      <h3>Bem Vindo a MF Sports!</h3>
+      <p>Sinta-se a Vontade!</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img
+        [src]="images[1]"
+        alt="Random second slide"
+        width="100%"
+        height="600"
+      />
+    </div>
+    <div class="carousel-caption">
+      <h3>Aqui encontrará os melhores produtos referente à esportes</h3>
+      <p>Venha conferir!</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img
+        [src]="images[2]"
+        alt="Random third slide"
+        width="100%"
+        height="600"
+      />
+    </div>
+    <div class="carousel-caption">
+      <h3>Nos forneça seu Feedback!</h3>
+      <p>Entre em contato conosco pela aba de "Contato"</p>
+    </div>
+  </ng-template>
+</ngb-carousel>
+
+<footer>
+  <hr />
+  <h2>Contato</h2>
+  <p><b>Endereço:</b> Fictício</p>
+  <p><b>Telefone:</b> (99) 9999-9999</p>
+  <p>Ponta Grossa, PR.</p>
+</footer>

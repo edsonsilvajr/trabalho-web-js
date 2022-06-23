@@ -1,0 +1,37 @@
+.header {
+  background: radial-gradient(#fff,#ffd6d6);
+  padding: 24px 0;
+}
+
+.logo h1{
+  margin: 0;
+}
+
+.logo a:hover {
+  text-decoration: none;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-content a{
+  color: #555;
+}
+
+.header-content li{
+  list-style-type: none;
+}
+
+.links-list {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+}
+
+.links-list li {
+  margin-right: 12px;
+}

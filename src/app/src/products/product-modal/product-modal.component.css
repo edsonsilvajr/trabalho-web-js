@@ -1,0 +1,14 @@
+.product-title {
+  font-size: 32px;
+  font-weight: 1000;
+  margin-bottom: 0px;
+}
+
+.modal-content {
+  justify-content: center;
+  text-align: center;
+}
+
+.background {
+  background: radial-gradient(#fff,#ffd6d6);
+}

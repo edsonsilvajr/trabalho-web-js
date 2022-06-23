@@ -1,0 +1,148 @@
+<div class="mt-4">
+  <form
+    [formGroup]="cadastroForm"
+    (ngSubmit)="onSubmit()"
+    class="form-container"
+  >
+    <h1>CADASTRO</h1>
+    <div class="form-row mb-4">
+      <label for="nome">Nome: </label>
+      <div class="input-wrapper">
+        <input id="nome" type="text" [formControlName]="'nome'" />
+        <p class="error-message" *ngIf="invalidName">Nome não pode ser vazio</p>
+      </div>
+    </div>
+
+    <div class="form-row mb-4">
+      <label for="email">Email: </label>
+      <div class="input-wrapper">
+        <input id="email" type="text" [formControlName]="'email'" />
+        <div class="error-message" *ngIf="invalidEmail">
+          <p *ngIf="this.cadastroForm.get('email')?.errors?.['required']">
+            Email não pode ser vazio
+          </p>
+          <p *ngIf="this.cadastroForm.get('email')?.errors?.['email']">
+            Insira um email correto
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row mb-4">
+      <label for="cpf">CPF: </label>
+      <div class="input-wrapper">
+        <input id="cpf" [formControlName]="'cpf'" type="text" />
+        <div class="error-message multiple-messages" *ngIf="invalidCpf">
+          <p *ngIf="this.cadastroForm.get('cpf')?.errors?.['required']">
+            cpf não pode ser vazio
+          </p>
+          <p *ngIf="this.cadastroForm.get('cpf')?.errors?.['cpf']">
+            Insira um cpf correto (11 digitos corretos no max/min)
+          </p>
+          <p *ngIf="this.cadastroForm.get('cpf')?.errors?.['pattern']">
+            SOMENTE NUMEROS
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row mb-4">
+      <label for="cep">CEP: </label>
+      <div class="input-wrapper">
+        <input
+          id="cep"
+          [formControlName]="'cep'"
+          type="text"
+          (keydown)="onKeyDown()"
+          (keyup)="onKeyUp()"
+        />
+        <div class="error-message multiple-messages" *ngIf="invalidCep">
+          <p *ngIf="this.cadastroForm.get('cep')?.errors?.['required']">
+            cep não pode ser vazio
+          </p>
+          <p *ngIf="this.cadastroForm.get('cep')?.errors?.['pattern']">
+            SOMENTE NUMEROS
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row mb-4">
+      <label for="rua">Rua: </label>
+      <div class="input-wrapper">
+        <input id="rua" [formControlName]="'rua'" type="text" />
+        <p class="error-message" *ngIf="invalidRua">Rua não pode ser vazia</p>
+      </div>
+    </div>
+
+    <div class="form-row mb-4">
+      <label for="bairro">Bairro: </label>
+      <div class="input-wrapper">
+        <input id="bairro" [formControlName]="'bairro'" type="text" />
+        <p class="error-message multiple-messages" *ngIf="invalidBairro">
+          Bairro não pode ser vazio
+        </p>
+      </div>
+    </div>
+
+    <div class="form-row mb-4">
+      <label for="cidade">Cidade: </label>
+      <div class="input-wrapper">
+        <input id="cidade" [formControlName]="'cidade'" type="text" />
+        <p class="error-message multiple-messages" *ngIf="invalidCidade">
+          Cidade não pode ser vazio
+        </p>
+      </div>
+    </div>
+
+    <div class="form-row mb-4">
+      <label for="uf">UF: </label>
+      <div class="input-wrapper">
+        <input id="uf" [formControlName]="'uf'" type="text" />
+        <p class="error-message multiple-messages" *ngIf="invalidUf">
+          UF não pode ser vazio
+        </p>
+      </div>
+    </div>
+
+    <div class="form-row mb-4" (click)="markAsTouched('data_nascimento')">
+      <label for="data_nascimento">Data de nascimento: </label>
+      <div class="input-wrapper">
+        <input
+          id="data_nascimento"
+          [formControlName]="'data_nascimento'"
+          type="date"
+        />
+        <div class="error-message multiple-messages" *ngIf="invalidDN">
+          <p
+            *ngIf="this.cadastroForm.get('data_nascimento')?.errors?.['required']"
+          >
+            Data de nascimento não pode ser vazio
+          </p>
+          <p
+            *ngIf="this.cadastroForm.get('data_nascimento')?.errors?.['underaged']"
+          >
+            Não pode ser menor de idade
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row mb-4">
+      <label for="senha">Senha: </label>
+      <div class="input-wrapper">
+        <input id="senha" [formControlName]="'senha'" type="password" />
+        <div class="error-message multiple-messages" *ngIf="invalidRua">
+          <p *ngIf="this.cadastroForm.get('senha')?.errors?.['required']">
+            Senha não pode ser vazia
+          </p>
+          <p *ngIf="this.cadastroForm.get('senha')?.errors?.['minlength']">
+            Ao menos 8 caracteres
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Cadastrar!</button>
+  </form>
+</div>

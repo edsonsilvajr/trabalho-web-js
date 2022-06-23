@@ -1,0 +1,55 @@
+<div class="mt-4">
+  <form
+    [formGroup]="contactForm"
+    (ngSubmit)="onSubmit()"
+    class="form-container"
+  >
+    <h1>CONTATO</h1>
+    <div class="form-row mb-4">
+      <label for="nome">Nome: </label>
+      <div class="input-wrapper">
+        <input id="nome" type="text" [formControlName]="'nome'" />
+        <p class="error-message" *ngIf="invalidName">Nome não pode ser vazio</p>
+      </div>
+    </div>
+
+    <div class="form-row mb-4">
+      <label for="email">Email: </label>
+      <div class="input-wrapper">
+        <input id="email" type="text" [formControlName]="'email'" />
+        <div class="error-message" *ngIf="invalidEmail">
+          <p *ngIf="this.contactForm.get('email')?.errors?.['required']">
+            Email não pode ser vazio
+          </p>
+          <p *ngIf="this.contactForm.get('email')?.errors?.['email']">
+            Insira um email correto
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row mb-4">
+      <label for="mensagem">Mensagem: </label>
+      <div class="input-wrapper">
+        <textarea id="mensagem" type="text" [formControlName]="'mensagem'">
+        </textarea>
+        <p class="error-message" *ngIf="invalidMessage">
+          Mensagem não pode ser vazia
+        </p>
+      </div>
+    </div>
+
+    <div class="form-row mb-4">
+      <label for="assunto">Assunto: </label>
+      <div class="input-wrapper">
+        <textarea id="assunto" type="text" [formControlName]="'assunto'">
+        </textarea>
+        <p class="error-message" *ngIf="invalidSubject">
+          Assunto não pode ser vazio
+        </p>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+  </form>
+</div>

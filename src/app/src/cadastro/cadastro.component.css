@@ -1,0 +1,48 @@
+.form-row{
+  justify-content: space-between;
+  
+  margin: 14px 0;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-wrapper input {
+  width: 100%;
+}
+
+.form-row .input-wrapper{
+  width: 80%;
+}
+
+.error-message{
+  position: absolute;
+  color: red;
+  font-size: 10px;
+  top: calc(100%);
+}
+
+.form-container {
+  text-align: center;
+  width: 100%;
+  padding: 2% 10%;
+  background: radial-gradient(#fff,#ffd6d6);
+  border-radius: 12px;
+}
+
+form{
+  width: 50%;
+}
+
+.multiple-messages {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.multiple-messages p:not(:first-child){
+  padding-left: 6px;
+  margin-left: 6px;
+  border-left: 1px solid red;
+}

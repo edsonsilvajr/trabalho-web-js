@@ -1,0 +1,35 @@
+<div class="mt-4 login-container">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form-container">
+    <h1>LOGIN</h1>
+    <div class="form-row mb-4">
+      <label for="email">Email: </label>
+      <div class="input-wrapper">
+        <input id="email" type="text" [formControlName]="'email'" />
+        <div class="error-message" *ngIf="invalidEmail">
+          <p *ngIf="this.loginForm.get('email')?.errors?.['required']">
+            Email não pode ser vazio
+          </p>
+          <p *ngIf="this.loginForm.get('email')?.errors?.['email']">
+            Insira um email correto
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row mb-4">
+      <label for="senha">Senha: </label>
+      <div class="input-wrapper">
+        <input id="senha" type="password" [formControlName]="'senha'" />
+        <div class="error-message" *ngIf="invalidSenha">
+          <p *ngIf="this.loginForm.get('senha')?.errors?.['required']">
+            Senha não pode ser vazio
+          </p>
+          <p *ngIf="this.loginForm.get('senha')?.errors?.['minlength']">
+            Senha contém no minimo 8 caracteres
+          </p>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">LOGAR</button>
+  </form>
+</div>
