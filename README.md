@@ -13,3 +13,8 @@ Clone esse repositório com `git-clone` e rode `npm-install` no diretório do pr
 - https://mf-sports.netlify.app
 
 - link no github: https://github.com/edsonsilvajr/trabalho-web-js
+
+## Grupo
+
+- Grupo: Edson, Adriano, Gustavo, Murilo Ianzen
+- Tema: Artigos de esporte
