@@ -21,7 +21,11 @@ export class CarrinhoComponent implements OnInit {
 
   ngOnInit(): void {
     const cart = this._storageService.get('cart');
-    this.logado = this._storageService.get('logado');
+    if (this._storageService.get('logado').length === 0) {
+      this.logado = false;
+    } else {
+      this.logado = this._storageService.get('logado');
+    }
     this.cart = cart;
   }
 
